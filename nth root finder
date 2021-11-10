@@ -1,0 +1,19 @@
+# nth root finder
+# Using binary search
+
+num = float(input("Enter the number: "))
+n = int(input("Which root do you want to find: "))
+
+start = 0
+end = num
+
+for i in range(100):
+    root = (start + end) / 2
+    if root ** n == num:
+        break
+    elif root ** n > num:
+        end = root
+    elif root ** n < num:
+        start = root
+
+print(root)
